@@ -92,18 +92,10 @@ export default async function ContactPage({
                 </ContactRow>
                 <ContactRow icon={Mail} label="Email">
                   <a
-                    href={`mailto:${company.emails.sales}`}
+                    href={`mailto:${company.emails.info}`}
                     className="block text-white hover:text-amber-300"
                   >
-                    {company.emails.sales}{" "}
-                    <span className="text-slate-500">— sales</span>
-                  </a>
-                  <a
-                    href={`mailto:${company.emails.engineering}`}
-                    className="block text-white hover:text-amber-300"
-                  >
-                    {company.emails.engineering}{" "}
-                    <span className="text-slate-500">— engineering</span>
+                    {company.emails.info}
                   </a>
                 </ContactRow>
                 <ContactRow icon={Clock} label="Business hours">

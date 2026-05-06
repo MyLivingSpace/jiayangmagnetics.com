@@ -38,8 +38,8 @@ export const company = {
     hr: "+86 180 2650 9428",
   },
   emails: {
-    sales: "sales@jiayangmagnetics.com",
-    engineering: "engineering@jiayangmagnetics.com",
+    sales: "info@jiayangmagnetics.com",
+    engineering: "info@jiayangmagnetics.com",
     info: "info@jiayangmagnetics.com",
   },
   legacyEmail: "sales@hzjy-cnt.com",
