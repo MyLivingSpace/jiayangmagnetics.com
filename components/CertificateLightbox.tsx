@@ -23,18 +23,15 @@ export default function CertificateLightbox({
 
   return (
     <>
-      <div className="relative block w-full text-left">
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        className="block w-full cursor-zoom-in text-left"
+        aria-haspopup="dialog"
+        aria-label={`View ${title} larger`}
+      >
         {children}
-        <button
-          type="button"
-          onClick={() => setOpen(true)}
-          className="absolute inset-0 z-10 cursor-zoom-in bg-transparent"
-          aria-haspopup="dialog"
-          aria-label={`View ${title} larger`}
-        >
-          <span className="sr-only">{`View ${title} larger`}</span>
-        </button>
-      </div>
+      </button>
       {open ? (
         <DocumentPreviewModal
           src={src}
