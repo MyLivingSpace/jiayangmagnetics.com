@@ -1,0 +1,22 @@
+Site logo upload path
+=====================
+
+Place your logo file here (same basename):
+  website/public/images/brand/jiayang-magnetics-logo.svg
+or
+  website/public/images/brand/jiayang-magnetics-logo.png
+or
+  website/public/images/brand/jiayang-magnetics-logo.jpg
+or
+  website/public/images/brand/jiayang-magnetics-logo.jpeg
+or
+  website/public/images/brand/jiayang-magnetics-logo.webp
+
+Current behavior:
+- Header tries formats in this order:
+  .svg -> .png -> .jpg -> .jpeg -> .webp
+- If missing, Header falls back to the "JM" logo chip.
+
+Tip:
+- Preferred format: SVG with transparent background.
+- Keep the artwork centered and square-friendly for best results in the 36x36 logo slot.

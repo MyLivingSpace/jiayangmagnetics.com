@@ -1,0 +1,257 @@
+Jiayang Magnetics — image upload map (page order, top → bottom)
+================================================================
+Drop files under:  website/public/images/...
+They appear on the site as:  /images/...
+
+Use EXACT filenames (case-sensitive). Prefer .jpg for photos, .svg for customer logos.
+
+────────────────────────────────────────────────────────────────
+GLOBAL
+────────────────────────────────────────────────────────────────
+  favicon — not under /images/:  website/public/favicon.ico
+     (referenced from app/layout.tsx)
+
+────────────────────────────────────────────────────────────────
+HOME  /
+     app/page.tsx — sections in vertical order
+────────────────────────────────────────────────────────────────
+
+1) Hero (right column, large desktop)
+     hero/hero-magnetic-components.jpg
+
+2) Trust strip — text only (no images)
+
+3) Who we are — photo right of copy
+     facility/jiayang-industrial-park-01.jpg
+     (used on Home "Who we are" + About + Capabilities galleries)
+
+4) Product categories — five cards, left → right, row then row (same order as /products grid)
+     products/transformers/family.jpg
+     products/inductors-chokes/family.jpg
+     products/amorphous-magnetic-cores/family.jpg
+     products/nanocrystalline-magnetic-cores/family.jpg
+     products/custom-magnetic-solutions/family.jpg
+
+5) Applications — cards have no photo assets on Home
+
+6) Customer References — logo wall (homepage shows a SUBSET of customers; order is group → group)
+     Home Appliances & HVAC:
+       customers/midea.svg
+       customers/haier.svg
+       customers/gree.svg
+       customers/panasonic.svg
+       customers/tcl.svg
+       customers/xiaomi.svg
+     Energy, EV Charging & Power Electronics:
+       customers/huawei.svg
+       customers/sungrow.svg
+       customers/delta.svg
+       customers/deye.svg
+       customers/vremt.svg
+       customers/saj.svg
+     Motor Drive & Industrial Systems:
+       customers/welling.svg
+       customers/dayang-motor.svg
+       customers/sanhua.svg
+       customers/vapel.svg
+       customers/sinexcel.svg
+     (Full list incl. Hisense + Auridian — see About page below.)
+
+7) Why Jiayang — text pillars only
+
+8) Manufacturing snapshot — four tiles, left → right (lib/proof.ts homeManufacturingSnapshot)
+     facility/winding-production-line-01.jpg
+     facility/testing-lab-01.jpg
+     facility/jiayang-industrial-park-02.jpg
+     products/magnetic-component-closeup-01.jpg
+
+9) Certifications band — text badges only (no image files in /images for this band)
+
+────────────────────────────────────────────────────────────────
+PRODUCTS  /products
+     app/products/page.tsx
+────────────────────────────────────────────────────────────────
+
+Page hero — no image.
+
+Product family cards — same five images as Home section (4), same order:
+     products/transformers/family.jpg
+     products/inductors-chokes/family.jpg
+     products/amorphous-magnetic-cores/family.jpg
+     products/nanocrystalline-magnetic-cores/family.jpg
+     products/custom-magnetic-solutions/family.jpg
+
+────────────────────────────────────────────────────────────────
+PRODUCT SERIES  /products/[family]/[series]
+     lib/productSeries.ts — each series folder: products/<family-slug>/<series-slug>/
+     Below: hero first, then gallery images in page order.
+────────────────────────────────────────────────────────────────
+
+— Transformers —
+
+  .../transformers/high-low-frequency-transformers/
+     hero.jpg
+     product-01.jpg
+     schematic-inverter-air-conditioner-40w.jpg
+     schematic-pdp-tv-240w.jpg
+     schematic-adapter-75w.jpg
+     typical-circuit-diagram.jpg
+
+  .../transformers/planar-transformer-dc/
+     hero.jpg
+     product-01.jpg
+
+  .../transformers/new-energy-transformers/
+     hero.jpg
+     product-01.jpg
+
+  .../transformers/amorphous-transformers/
+     hero.jpg
+     product-01.jpg
+
+— Inductors & chokes —
+
+  .../inductors-chokes/common-mode-choke/
+     hero.jpg
+     product-01.jpg
+
+  .../inductors-chokes/high-frequency-pfc-inductor/
+     hero.jpg
+     product-01.jpg
+
+  .../inductors-chokes/amorphous-active-pfc-inductor/
+     hero.jpg
+     product-01.jpg
+     typical-circuit-diagram.jpg
+
+  .../inductors-chokes/rectangular-pfc-inductor/
+     hero.jpg
+     product-01.jpg
+     dimensions.jpg
+
+  .../inductors-chokes/sq-series-common-mode-inductor/
+     hero.jpg
+     product-01.jpg
+
+  .../inductors-chokes/new-energy-inductors/
+     hero.jpg
+     product-01.jpg
+     product-02.jpg
+     product-03.jpg
+
+— Amorphous magnetic cores —
+
+  .../amorphous-magnetic-cores/amorphous-magnetic-material/
+     hero.jpg
+     product-01.jpg
+
+— Nanocrystalline magnetic cores —
+
+  .../nanocrystalline-magnetic-cores/nanocrystalline-magnetic-material/
+     hero.jpg
+     product-01.jpg
+
+(Custom Magnetic Solutions has no series pages — family card only.)
+
+────────────────────────────────────────────────────────────────
+CAPABILITIES  /capabilities
+     app/capabilities/page.tsx — sections top → bottom
+────────────────────────────────────────────────────────────────
+
+Page hero — no image.
+
+Intro — no image.
+
+Manufacturing Facilities & Production Lines (photo grid, order = lib/proof.ts facilitiesGallery)
+     facility/jiayang-industrial-park-01.jpg
+     facility/winding-production-line-01.jpg
+     facility/automated-assembly-line-01.jpg
+     facility/core-preparation-01.jpg
+     facility/encapsulation-potting-01.jpg
+     facility/final-assembly-01.jpg
+     facility/packaging-outbound-01.jpg
+     facility/hubei-production-base-01.jpg
+
+Testing & Inspection Capabilities (photo grid, order = lib/proof.ts testingGallery)
+     testing/incoming-quality-control-01.jpg
+     testing/automated-magnetic-testing-01.jpg
+     testing/final-product-inspection-01.jpg
+     testing/impedance-analyzer-01.jpg
+     testing/universal-test-instrument-01.jpg
+     testing/vibration-test-system-01.jpg
+     testing/environmental-test-01.jpg
+     testing/reliability-safety-testing-01.jpg
+
+Certifications, Patents & Documentation (scans — order = three sub-bands on page)
+
+  Certifications:
+     certifications/iso9001.jpg
+     certifications/iso14001.jpg
+     certifications/iatf16949.jpg
+     certifications/ul-cqc.jpg
+
+  Patents:
+     patents/patent-active-pfc-inductor-2010.jpg
+     patents/patent-transformer-core-winding-2019.jpg
+
+  Recognition & memberships (only first two have images wired):
+     recognitions/high-tech-enterprise.jpg
+     recognitions/midea-gold-supplier.jpg
+
+R&D & Engineering — image right
+     capabilities/rd-engineering-01.jpg
+
+Manufacturing Process — process steps are text only (no images)
+
+Quality Control — image left
+     capabilities/quality-control-01.jpg
+
+Testing & Reliability — method chips are text only
+
+Customization & NPI — image right
+     capabilities/customization-npi-01.jpg
+
+────────────────────────────────────────────────────────────────
+ABOUT  /about
+     app/about/page.tsx — sections top → bottom
+────────────────────────────────────────────────────────────────
+
+Page hero — no image.
+
+Company Overview — image right
+     about/company-overview-01.jpg
+
+Brand & Legal Entity — no image
+
+Milestones — major milestones may show thumbnails (lib/content.ts milestones, chronological)
+     timeline/2002-founded.jpg
+     timeline/2008-hubei-base.jpg
+     timeline/2015-new-energy-market.jpg
+     timeline/2020-midea-gold-supplier.jpg
+     timeline/2023-jiayang-industrial-park.jpg
+     timeline/2026-jiayang-magnetics.jpg
+
+Customer Relationships — full logo wall (all groups; includes logos not on Home)
+     Home Appliances & HVAC:
+       customers/midea.svg, haier.svg, hisense.svg, gree.svg, panasonic.svg, tcl.svg, xiaomi.svg
+     Energy, EV Charging & Power Electronics:
+       customers/huawei.svg, sungrow.svg, deye.svg, delta.svg, vremt.svg, auridian.svg, saj.svg
+     Motor Drive & Industrial Systems:
+       customers/welling.svg, dayang-motor.svg, sanhua.svg, vapel.svg, sinexcel.svg
+
+Certifications — text band (same as Home; no /images files)
+
+Facility — three figures, left → right
+     facility/jiayang-industrial-park-01.jpg
+     facility/winding-production-line-01.jpg
+     facility/testing-lab-01.jpg
+
+────────────────────────────────────────────────────────────────
+CONTACT  /contact
+────────────────────────────────────────────────────────────────
+Map uses Google embed — no image files in /images for this page.
+
+────────────────────────────────────────────────────────────────
+OTHER PAGES (Applications, Resources, Privacy, etc.)
+────────────────────────────────────────────────────────────────
+No local /images assets wired for those routes at time of writing.

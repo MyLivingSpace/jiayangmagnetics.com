@@ -1,0 +1,12 @@
+Brochure upload folder (Header + Resources download)
+====================================================
+
+Upload the brochure PDF here:
+  website/public/resources/brochure/
+
+Use this exact filename:
+  jiayang-magnetics-company-profile-product-catalog.pdf
+
+Where it is used:
+- Header top utility bar: "Download Catalog"
+- Resources page: Product Catalog category

@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Base typography. The site uses a single sans-serif (Inter) for credibility
+ * and consistency — paired display fonts often read as "marketing site" rather
+ * than "industrial manufacturer".
+ */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-slate-900 font-sans antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply tracking-tight;
+  }
+
+  /* Selection in copper — small detail that ties the accent across the site. */
+  ::selection {
+    background-color: #fde68a;
+    color: #0f172a;
+  }
+}
+
+@layer components {
+  /*
+   * The fine top rule above section headings — used in PageHero, SectionHeading,
+   * and any block where a small accent moment helps anchor the eye without
+   * shouting. Width is intentionally short.
+   */
+  .accent-rule {
+    @apply inline-block h-[2px] w-10 bg-accent align-middle;
+  }
+}

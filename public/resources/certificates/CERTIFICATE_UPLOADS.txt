@@ -1,0 +1,14 @@
+Certificates upload folder (Resources page downloads)
+=====================================================
+Place certificate PDFs in this folder:
+  website/public/resources/certificates/
+
+Use these exact filenames (case-sensitive):
+  iso-9001-certificate.pdf
+  iso-14001-certificate.pdf
+  iatf-16949-certificate.pdf
+  ul-cqc-certificates.pdf
+
+Notes:
+- These files are linked in /resources as direct downloads.
+- Patent certificates remain "Available on request" and are not in this download set.
