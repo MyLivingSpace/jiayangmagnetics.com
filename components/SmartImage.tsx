@@ -1,6 +1,6 @@
 import { ImageIcon } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { imageExists } from "@/lib/imageExists";
+import { resolveImagePath } from "@/lib/imageExists";
 
 /**
  * SmartImage — graceful image with on-disk fallback.
@@ -53,7 +53,8 @@ export default function SmartImage({
   className?: string;
   rounded?: boolean;
 }) {
-  const exists = imageExists(src);
+  const resolvedSrc = resolveImagePath(src);
+  const exists = Boolean(resolvedSrc);
   const radius = rounded ? "rounded-sm" : "";
 
   if (exists) {
@@ -68,7 +69,7 @@ export default function SmartImage({
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={src}
+          src={resolvedSrc!}
           alt={alt}
           className={cn(
             "absolute inset-0 h-full w-full",

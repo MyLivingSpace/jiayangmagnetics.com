@@ -195,16 +195,16 @@ export async function POST(req: Request) {
     raw: body,
   };
 
+  let storageError: string | undefined;
   try {
     const dir = path.join(process.cwd(), "data");
     const file = path.join(dir, "contact-submissions.jsonl");
     fs.mkdirSync(dir, { recursive: true });
     fs.appendFileSync(file, `${JSON.stringify(submission)}\n`, "utf8");
-  } catch {
-    return NextResponse.json(
-      { ok: false, error: "Failed to store submission." },
-      { status: 500 }
-    );
+  } catch (err) {
+    // On serverless platforms, local filesystem writes may be unavailable.
+    // Keep submission flow successful as long as email forwarding can run.
+    storageError = err instanceof Error ? err.message : "Failed to store submission.";
   }
 
   const emailResult = await forwardSubmissionEmail(submission);
@@ -212,6 +212,7 @@ export async function POST(req: Request) {
   // eslint-disable-next-line no-console
   console.log("[contact] submission stored", {
     ref,
+    storageError,
     emailSent: emailResult.sent,
     provider: emailResult.provider,
     emailError: emailResult.error,
@@ -220,6 +221,8 @@ export async function POST(req: Request) {
   return NextResponse.json({
     ok: true,
     ref,
+    storedLocally: !storageError,
+    storageError,
     emailForwarded: emailResult.sent,
     emailProvider: emailResult.provider,
     emailError: emailResult.error,
