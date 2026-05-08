@@ -1,4 +1,4 @@
-import { imageExists } from "@/lib/imageExists";
+import { resolveImagePath } from "@/lib/imageExists";
 import { cn } from "@/lib/cn";
 import type { Customer } from "@/lib/content";
 
@@ -79,15 +79,5 @@ export default function CustomerLogoItem({
  */
 function resolveCustomerLogoPath(logoPath: string): string | null {
   if (!logoPath) return null;
-  if (imageExists(logoPath)) return logoPath;
-
-  if (!logoPath.toLowerCase().endsWith(".svg")) return null;
-
-  const base = logoPath.slice(0, -4);
-  const fallbacks = [".png", ".jpg", ".jpeg", ".webp"];
-  for (const ext of fallbacks) {
-    const candidate = `${base}${ext}`;
-    if (imageExists(candidate)) return candidate;
-  }
-  return null;
+  return resolveImagePath(logoPath);
 }
